@@ -1,11 +1,12 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_monitoring/Screen/home_screen.dart';
+import 'package:image_picker/image_picker.dart';
 
 import '../Controllers/controllers.dart';
-import '../tool/TextField_Item.dart';
+import '../tool/field_item.dart';
 import '../tool/student_model.dart';
-import 'package:image_picker/image_picker.dart';
-import 'dart:io';
 
 GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
@@ -26,8 +27,7 @@ class _LoginScreenState extends State<LoginScreen> {
     var pickedImage = await imagePicker.pickImage(source: ImageSource.gallery);
     if (pickedImage != null) {
       setState(() {
-        image = File(pickedImage!.path);
-        print(image);
+        image = File(pickedImage.path);
       });
     } else {}
   }
